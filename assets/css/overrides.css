@@ -1,0 +1,139 @@
+
+/* === Injected by automation: Brand blue + Ports Marquee === */
+:root{
+  --brand-blue: #0055A4; /* Change to #1E90FF if you prefer Dodger Blue */
+}
+.button,
+.btn,
+.cta-btn,
+.btn-primary,
+.btn-success,
+.btn-outline-success,
+.btn-blue,
+.btn-green,
+a.button,
+a.btn {
+  background-color: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+  color: #fff !important;
+}
+.button:hover,
+.btn:hover,
+.cta-btn:hover,
+.btn-primary:hover,
+.btn-success:hover,
+.btn-outline-success:hover,
+.btn-blue:hover,
+.btn-green:hover {
+  filter: brightness(0.92);
+}
+.btn-outline,
+.button.outline,
+.btn-outline-success {
+  background-color: transparent !important;
+  color: var(--brand-blue) !important;
+  border: 1px solid var(--brand-blue) !important;
+}
+.btn-outline:hover,
+.button.outline:hover,
+.btn-outline-success:hover {
+  background-color: var(--brand-blue) !important;
+  color: #fff !important;
+}
+
+/* ===== Ports Marquee Styles ===== */
+.ports-marquee-wrapper {
+  background: #f7f9fb;
+  padding: 18px 0;
+  overflow: hidden;
+}
+.ports-marquee {
+  position: relative;
+  overflow: hidden;
+}
+.ports-marquee::before,
+.ports-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.ports-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(247,249,251,1), rgba(247,249,251,0));
+}
+.ports-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(247,249,251,1), rgba(247,249,251,0));
+}
+.ports-track {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  animation: ports-scroll 40s linear infinite;
+}
+.ports-track li { flex: 0 0 auto; }
+.ports-track img {
+  display: block;
+  height: 120px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .ports-track img { height: 90px; }
+}
+@keyframes ports-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+/* === Single Ticker Bar (ensure only one dark strip) === */
+.brand-ticker{
+  background:#0E2A2C; /* deep teal/black */
+  color:#fff;
+  height:44px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  margin:0; padding:0;
+  border:0;
+}
+.brand-ticker .ticker-inner{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+}
+.brand-ticker .ticker-track{
+  gap: 32px;
+  display:inline-flex;
+  
+  white-space:nowrap;
+  animation: brand-ticker-scroll 15s linear infinite;
+  padding:0 16px;
+}
+.brand-ticker span{
+  font-size:14px;
+  letter-spacing:.3px;
+  opacity:.95;
+}
+@keyframes brand-ticker-scroll{
+  from{ transform: translateX(0); }
+  to{   transform: translateX(-50%); }
+}
+
+/* Remove any unintended borders/margins so it doesn't look like two bars */
+#ports-marquee, .ports-marquee-wrapper{
+  margin-top:0 !important;
+  border-top:none !important;
+}
+.brand-ticker + #ports-marquee{
+  margin-top:0 !important;
+}
