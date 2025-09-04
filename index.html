@@ -2,15 +2,6 @@
 
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ68TJ5NDY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SZ68TJ5NDY');
-</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>North Star Express | China–USA Ocean Freight, US Distribution &amp; Last‑Mile Delivery</title>
@@ -262,7 +253,17 @@
 <div class="container">
 <h2 class="section-title" data-i18n="contact.title">Request a Quote</h2>
 <p class="section-lead" data-i18n="contact.lead">Tell us about your shipment and we’ll reply within 24 hours.</p>
-<form class="quote-form" data-netlify="true" data-netlify-honeypot="bot-field" id="quoteForm" method="POST" name="quote" novalidate=""><input name="form-name" type="hidden" value="quote"/><p style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field"/></label></p>
+<form name="quote" class="quote-form"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thank-you">
+  <!-- Netlify required hidden field -->
+  <input type="hidden" name="form-name" value="quote">
+  <!-- Honeypot anti-spam -->
+  <p class="hidden" style="display:none;">
+    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+  </p>
 <div class="grid two safeform">
 <div class="field">
 <label for="company">Company</label>
@@ -302,10 +303,10 @@
 </div>
 </div>
 <div class="form-actions">
-<button class="btn btn-primary" type="submit">Send Request</button>
-<a class="btn btn-ghost" href="mailto:salesteam@northstar-express.com.com?subject=Quote%20Request">Email Us Instead</a>
-</div>
-<p aria-live="polite" class="form-status" id="formStatus" role="status"></p>
+    <button class="btn btn-primary" type="submit">Send Request</button>
+    <a class="btn btn-ghost" href="mailto:salesteam@northstar-express.com?subject=Quote%20Request">Email Us Instead</a>
+  </div>
+  <p id="formStatus" class="form-status" aria-live="polite" role="status"></p>
 </form>
 </div>
 </section>
