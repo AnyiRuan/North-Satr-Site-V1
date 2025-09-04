@@ -38,10 +38,10 @@
           return;
         }
       }
-      const isNetlify = !!document.querySelector('input[name="form-name"]');
-      if(isNetlify && location.hostname.endsWith('.netlify.app')){
+       const isNetlify = !!document.querySelector('input[name="form-name"]');
+      if (isNetlify) {
         if(window.gtag){ gtag('event','lead_submit',{method:'netlify'}); }
-        return; // allow POST
+        return; // allow native POST to Netlify; it will redirect to action="/thank-you"
       }
       e.preventDefault();
       const body = encodeURIComponent(
