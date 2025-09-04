@@ -57,7 +57,7 @@ Notes:
 ${data.get('notes')||''}
 `
       );
-      window.location.href = `mailto:sales@northstarexpress.com?subject=Quote%20Request&body=${body}`;
+      window.location.href = `mailto:salesteam@northstar-express.com?subject=Quote%20Request&body=${body}`;
       if(status){ status.textContent = 'Thanks! Your email editor should open now. We reply within 24 hours.'; status.style.color = '#0b3a33'; }
       if(window.gtag){ gtag('event','lead_submit',{method:'mailto'}); }
       form.reset();
