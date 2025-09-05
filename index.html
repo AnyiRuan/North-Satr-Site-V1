@@ -263,13 +263,12 @@
 <h2 class="section-title" data-i18n="contact.title">Request a Quote</h2>
 <p class="section-lead" data-i18n="contact.lead">Tell us about your shipment and we’ll reply within 24 hours.</p>
 <form name="quote" class="quote-form"
+      id="quoteForm"
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
       action="/thank-you.html">
-  <!-- Netlify required hidden field -->
   <input type="hidden" name="form-name" value="quote">
-  <!-- Honeypot anti-spam -->
   <p class="hidden" style="display:none;">
     <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
   </p>
