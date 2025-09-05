@@ -25,7 +25,7 @@
   });
 
   // Quote form (Netlify + mailto fallback)
-  const form = document.getElementById('quoteForm');
+  const form = document.getElementById('quoteForm') || document.querySelector('form.quote-form');
   const status = document.getElementById('formStatus');
   if(form){
     form.addEventListener('submit', (e)=>{
